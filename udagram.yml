@@ -109,7 +109,8 @@ Resources:
       Subnets: 
         - Fn::ImportValue: !Sub ${ProjectName}-PublicSubnet1
         - Fn::ImportValue: !Sub ${ProjectName}-PublicSubnet2
-      SecurityGroup: !Ref LBSecGroup
+      SecurityGroups: 
+        - Ref: LBSecGroup
 
   HTTPlistener:
     Type: "AWS::ElasticLoadBalancingV2::Listener"
